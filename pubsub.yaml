@@ -1,0 +1,29 @@
+# Using Redis for pub/sub
+# apiVersion: dapr.io/v1alpha1
+# kind: Component
+# metadata:
+#   name: pubsub
+# spec:
+#   type: pubsub.redis
+#   version: v1
+#   metadata:
+#     - name: redisHost
+#       value: 172.29.20.171:6379
+#     - name: redisUsername
+#       value: "sargon_admin"
+#     - name: redisPassword
+#       value: "doyouloveme"
+#     - name: consumerID
+#       value: ""
+
+# Using RabbitMQ for pub/sub
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+spec:
+  type: pubsub.rabbitmq
+  version: v1
+  metadata:
+    - name: host
+      value: amqp://admin:admin@172.29.20.171:5672

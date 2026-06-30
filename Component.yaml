@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: statestore
+  namespace: default
+spec:
+  type: state.redis
+  version: v1
+  metadata:
+    - name: redisHost
+      value: 172.29.20.171:6379 # Redis instance host and port
+    - name: redisUsername
+      value: "sargon_admin"
+    - name: redisPassword
+      value: "doyouloveme" # Password if Redis requires authentication
+    - name: actorStateStore
+      value: "true" # Indicates this store is used for actor state
